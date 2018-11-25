@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux"
 import { increaseQuantity, decreaseQuantity } from "../redux/actions"
 
-const Item = ({ item }) => (
+const Item = ({ item, increaseQuantity, decreaseQuantity }) => (
     <li className="item">
         {item.name} - {item.unitPrice} - {item.quantity} - {item.quantity * item.unitPrice}
         <button onClick={() => increaseQuantity(item.id)}>Increase</button>
@@ -12,5 +12,5 @@ const Item = ({ item }) => (
 
 export default connect(
     null,
-    { increaseQuantity, decreaseQuantity}
-    )(Item);
+    { increaseQuantity, decreaseQuantity }
+)(Item);
