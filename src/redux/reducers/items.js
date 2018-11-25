@@ -1,4 +1,4 @@
-import { INCREASE_QUANTITY, DECREASE_QUANTITY } from "../actionTypes"
+import { INCREASE_QUANTITY, DECREASE_QUANTITY, REMOVE_ITEM } from "../actionTypes"
 
 const initialState = [
     {"id": 1, "name": "Apple", "unitPrice": 2, "quantity": 1},
@@ -36,6 +36,10 @@ export default function(state = initialState, action){
                     return item;
                 }
             });
+        }
+        case REMOVE_ITEM: {
+            const {id} = action.payload;
+            return state.filter(item => item.id !== id);
         }
         default:
             return state;
