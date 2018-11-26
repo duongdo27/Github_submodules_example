@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ItemList from './components/ItemList';
 import TotalPrice from './components/TotalPrice';
+import AddItem from './components/AddItem';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
           <ItemList />
           <TotalPrice />
+          <AddItem />
       </div>
     );
   }
